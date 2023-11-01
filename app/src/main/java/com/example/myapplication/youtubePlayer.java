@@ -78,8 +78,6 @@ public class youtubePlayer extends AppCompatActivity implements Playable{
 
     }
 
-
-
     public void onTrackPlay() {
         Log.d("debug", "Playingggg!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         CreateNotification.createNotification(this, Title, Artist,
@@ -106,7 +104,6 @@ public class youtubePlayer extends AppCompatActivity implements Playable{
     {
         super.onDestroy();
         youTubePlayerView.release();
-
     }
     private void playVideo(String videoId) {
 

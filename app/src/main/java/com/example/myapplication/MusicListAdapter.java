@@ -1,8 +1,12 @@
 package com.example.myapplication;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,14 +34,22 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
     }
 
     @Override
-    public void onBindViewHolder( ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         AudioModel songData = songsList.get(position);
         holder.titleTextView.setText(songData.getTitle());
 
         if(MyMediaPlayer.currentIndex==position){
-            holder.titleTextView.setTextColor(Color.parseColor("#FF0000"));
+            holder.titleTextView.setTextColor(Color.parseColor("#2AC989"));
+            holder.titleTextView.setTextSize(16);
+            holder.titleTextView.setTypeface(Typeface.DEFAULT_BOLD);
+            holder.iconImageView.setImageResource(R.drawable.music_icon2);
+            holder.itemView.setBackgroundResource(R.drawable.recycle2);
+
         }else{
-            holder.titleTextView.setTextColor(Color.parseColor("#000000"));
+            holder.titleTextView.setTextColor(Color.parseColor("#FFFFFF"));
+            holder.titleTextView.setTextSize(14);
+            holder.itemView.setBackgroundResource(R.drawable.recycle);
+            holder.iconImageView.setImageResource(R.drawable.music_icon);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

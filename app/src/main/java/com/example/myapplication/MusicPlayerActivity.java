@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
@@ -24,7 +23,6 @@ public class MusicPlayerActivity extends AppCompatActivity {
     ImageView pausePlay,nextBtn,previousBtn,musicIcon;
     ArrayList<AudioModel> songsList;
     AudioModel currentSong;
-
     MediaPlayer mediaPlayer = MyMediaPlayer.getInstance();
     BroadcastReceiver broadcastReceiver;
     int x=0;

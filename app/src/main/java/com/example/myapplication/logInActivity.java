@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -17,6 +18,7 @@ public class logInActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ActivityCompat.requestPermissions(this,new String[]{android.Manifest.permission.READ_MEDIA_AUDIO},123);
         super.onCreate(savedInstanceState);
         View decorView = getWindow().getDecorView();
         int flags = View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -64,7 +66,7 @@ public class logInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to open the target activity
-                Intent intent = new Intent(logInActivity.this, HomeActivity.class);
+                Intent intent = new Intent(logInActivity.this, homeActivity.class);
                 startActivity(intent);
             }
         });
